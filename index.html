@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login / Registro | Naranja Moderno</title>
+  <link rel="stylesheet" href="css/login.css" />
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-wrapper">
+      <!-- Panel de Login -->
+      <div class="auth-panel active" id="loginPanel">
+        <h2 class="panel-title">Bienvenido</h2>
+        <p class="panel-subtitle">Inicia sesión para continuar</p>
+        <form action="api/login.php" method="POST">
+          <div class="input-group">
+            <input type="email" id="loginEmail" name="email" required />
+            <label for="loginEmail">Correo electrónico</label>
+          </div>
+          <div class="input-group">
+            <input type="password" id="loginPassword" name="pass" required />
+            <label for="loginPassword">Contraseña</label>
+          </div>
+          <input type="submit" value="Iniciar sesión" name="btnEntrar" class="btn-primary" />
+        </form>
+        <p class="switch-text">
+          ¿No tienes cuenta? <span class="switch-link" id="goToRegister">Regístrate</span>
+        </p>
+      </div>
+
+      <!-- Panel de Registro -->
+      <div class="auth-panel" id="registerPanel">
+        <h2 class="panel-title">Únete a nosotros</h2>
+        <p class="panel-subtitle">Crea tu cuenta gratis</p>
+        <form action="api/registro.php" method="POST">
+          <div class="input-group">
+            <input type="text" id="registerUsuario" name="usuario" required />
+            <label for="registerUsuario">Nombre de usuario</label>
+          </div>
+          <div class="input-group">
+            <input type="tel" id="registerTelefono" name="telefono" required />
+            <label for="registerTelefono">Teléfono</label>
+          </div>
+          <div class="input-group">
+            <input type="email" id="registerEmail" name="email" required />
+            <label for="registerEmail">Correo electrónico</label>
+          </div>
+          <div class="input-group">
+            <label for="registerGenero">Género</label>
+            <select  id="registerGenero" name="genero" required>
+              <option value="">Selecciona un género</option>
+              <option value="1">Masculino</option>
+              <option value="2">Femenino</option>
+              <option value="3">Prefiero no decirlo</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <input type="password" id="registerPassword" name="pass" required />
+            <label for="registerPassword">Contraseña</label>
+          </div>
+          <div class="input-group">
+            <input type="password" id="registerConfirmPassword" name="confirm_password" required />
+            <label for="registerConfirmPassword">Confirmar contraseña</label>
+          </div>
+          <button type="submit" class="btn-primary">Crear Cuenta</button>
+        </form>
+        <p class="switch-text">
+          ¿Ya tienes cuenta? <span class="switch-link" id="goToLogin">Inicia sesión</span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/login.js"></script>
+</body>
+</html>
